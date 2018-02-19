@@ -1,4 +1,4 @@
-package test.java.empoeeLab.model;
+package java.empoeeLab.model;
 
 import main.java.empoloeeLab.model.Person;
 import org.junit.Test;

@@ -17,4 +17,12 @@ public enum Skill {
     Skill(String description) {
         this.description = description;
     }
+
+    public static Skill checkedValue(String skillName) {
+        try {
+            return valueOf(skillName.toUpperCase());
+        } catch (IllegalArgumentException exception) {
+            return null;
+        }
+    }
 }

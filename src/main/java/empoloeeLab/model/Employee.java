@@ -27,4 +27,27 @@ public class Employee extends Person {
         super(name, surname, dateOfBirth);
         this.skills = skills;
     }
+
+    public int hasSkill(String skillName) {
+        if (skillName == null) {
+            return -1;
+        }
+        Skill skill = Skill.checkedValue(skillName);
+        return skill == null || skills.get(skill) == null? -1 : skills.get(skill);
+    }
+
+    /**
+     * @param skill - {@code Skill} new skill
+     * @param level
+     * @return boolean true if skill was added
+     */
+    public boolean addNewSkill(Skill skill, int level) {
+        int value = hasSkill(skill.name());
+        if (value != -1) {
+            System.out.println(String.format("This skill already exists with %d value", value));
+            return false;
+        }
+        skills.put(skill, level);
+        return true;
+    }
 }
