@@ -11,7 +11,8 @@ import java.util.Map;
  */
 public class Employee extends Person {
 
-    Map<Skill, Integer> skills;
+    private Map<Skill, Integer> skills;
+    private long salary;
 
     public Employee(String name, String surname) {
         super(name, surname);
@@ -49,5 +50,13 @@ public class Employee extends Person {
         }
         skills.put(skill, level);
         return true;
+    }
+
+    public long getSalary() {
+        return salary;
+    }
+
+    public void setSalary(SalaryManager manager) {
+        manager.changeSalary(this.salary, true);
     }
 }
