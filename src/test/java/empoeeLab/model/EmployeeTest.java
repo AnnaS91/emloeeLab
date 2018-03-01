@@ -1,8 +1,10 @@
 package test.java.empoeeLab.model;
 
+import main.java.empoloeeLab.exception.ValidationException;
 import main.java.empoloeeLab.model.Employee;
 import main.java.empoloeeLab.model.Skill;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.Date;

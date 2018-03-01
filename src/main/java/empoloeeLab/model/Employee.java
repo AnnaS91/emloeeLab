@@ -1,5 +1,7 @@
 package main.java.empoloeeLab.model;
 
+import main.java.empoloeeLab.exception.ValidationException;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +15,7 @@ public class Employee extends Person {
 
     private Map<Skill, Integer> skills;
     private long salary;
+    private String email;
 
     public Employee(String name, String surname) {
         super(name, surname);
@@ -56,7 +59,19 @@ public class Employee extends Person {
         return salary;
     }
 
-    public void setSalary(SalaryManager manager) {
-        manager.changeSalary(this.salary, true);
+    public void setSalary(SalaryManager manager) throws ValidationException {
+       long newSalary =  manager.changeSalary(salary, true);
+       if (newSalary <= 0) {
+           throw new ValidationException();
+       }
+       salary = newSalary;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
