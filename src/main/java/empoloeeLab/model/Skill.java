@@ -9,7 +9,7 @@ public enum Skill {
 
     JAVA("Can develop new things using Java"),
     TEST("Can test an awful thing"),
-    ENGLISH("Can speak"),
+    ENGLISH("Can speak test"),
     TEAM_PLAYER("Can work with somebody");
 
     String description;
